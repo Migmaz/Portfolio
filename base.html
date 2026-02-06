@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showPage(shownId, hiddenIds) {
+    document.getElementById(shownId).style.display = 'block';
+    hiddenIds.forEach(id => {
+        document.getElementById(id).style.display = 'none';
+    });
+}
+</script>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+}
 
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  <li><a href="#" onclick="return showPage('about', ['projet', 'contact']);">À propos</a></li>
+  <li><a href="#" onclick="return showPage('projet', ['about', 'contact']);">Projet</a></li>
+  <li><a href="#" onclick="return showPage('contact', ['projet', 'about']);">Contact</a></li>
+</ul>
+
+<div id="about" style="display: block;">
+    <h1>About Page</h1>
+    <p>Learn more about us.</p>
+</div>
+
+<div id="projet" style="display: none;">
+    <h1 style="text-align: center;font-family:cursive;">Projet Page</h1>
+    <p>Welcome to the Projet page!</p>
+    <img src="julia (8).gif" alt="Julia">
+</div>
+
+<div id="contact" style="display: none;">
+    <h1>Contact Page</h1>
+    <p>Get in touch.</p>
+</div>
+
+</body>
+</html>
